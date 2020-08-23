@@ -30,7 +30,7 @@ bool subsets(int arr[],int n,int sum){
         for(int j=1;j<=sum;j++){
             //Check two cases include or exclude 
             if(j>=arr[i-1])
-                dp[i][j]=dp[i-1][j]+dp[i-1][j-arr[i-1]];
+                dp[i][j]=dp[i-1][j] || dp[i-1][j-arr[i-1]];
             else
                 dp[i][j]=dp[i-1][j];
         }
